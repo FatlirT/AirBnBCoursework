@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="pane" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ListingsController">
+   <center>
+      <TableView fx:id="table" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#viewProperty">
+        <columns>
+          <TableColumn fx:id="nameColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="175.0" sortable="false" text="Host" />
+          <TableColumn fx:id="priceColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="75.0" sortable="false" text="Price" />
+            <TableColumn fx:id="reviewsColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="125.0" sortable="false" text="Number of Reviews" />
+            <TableColumn fx:id="nightsColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="175.0" sortable="false" text="Minimum Number of Nights" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <Label text="Sort By:" />
+            <ComboBox fx:id="sortingOptions" onAction="#onSortValueChange" prefWidth="150.0" />
+            <Label text="Reverse Sorting Direction:" />
+            <CheckBox fx:id="reverseSort" disable="true" mnemonicParsing="false" onAction="#onSortValueChange" />
+        </items>
+      </ToolBar>
+   </top>
+</BorderPane>

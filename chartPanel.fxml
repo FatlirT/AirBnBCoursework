@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChartController">
+   <center>
+      <ScatterChart fx:id="scatterChart" legendVisible="false" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis forceZeroInRange="false" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis forceZeroInRange="false" side="LEFT" />
+        </yAxis>
+      </ScatterChart>
+   </center>
+   <top>
+      <ToolBar BorderPane.alignment="CENTER">
+        <items>
+            <Label text="X-Axis:" />
+            <ComboBox onAction="#onAxesChange" fx:id="xCombo" />
+            <Separator orientation="VERTICAL" />
+            <Label text="Y-Axis:" />
+            <ComboBox fx:id="yCombo" onAction="#onAxesChange" />
+            <Separator orientation="VERTICAL" />
+            <Button mnemonicParsing="false" onAction="#swapAxes" text="Swap Axes" />
+            <Separator fx:id="drawChartSeparator" orientation="VERTICAL" />
+             <Button fx:id="drawChartButton" mnemonicParsing="false" onAction="#onAxesChange" text="Draw Chart" />
+            
+        </items>
+      </ToolBar>
+   </top>
+</BorderPane>
